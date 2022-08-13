@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Create a Banking Account!</h1>
+    <!--action we will change to main page (guy in vid said /register for endpoint)-->
+    <form action="register" method="post" >
+        <!-- get acc # from the java accounts int or sm -->
+        <p>Account number: <span name="id"></span></p>
+        <p>Checkings or savings account</p>
+        <select name="accType" id="" required>
+            <!-- make it so if they choose this one it doesnt allow them -->
+            <option value=""></option>
+            <option value="checkingsAcc">Checkings</option>
+            <option value="savingsAcc">Savings</option>
+        </select>
+        <p>Account initial amount </p>
+        <input type="text" placeholder="100.00" name="initialAmt" id="initialAmount">
+        <div id="ifSavings" style="display: none">
+            <p>Savings Account: Annual Interest (do not include % sign)</p>
+            <input type="text" placeholder="10%" name="annualInterest">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
