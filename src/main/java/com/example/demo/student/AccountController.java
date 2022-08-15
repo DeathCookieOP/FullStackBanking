@@ -1,5 +1,6 @@
 package com.example.demo.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -16,6 +17,11 @@ public class AccountController {
 //        return Arrays.asList(new Account(1, "Checkings", 1000));
 //    }
 
+    @Autowired //to inject the dependency
+    private AccountRepository accRepo;
+
+    //mapping url to it
+    //localhost:8080/
     @GetMapping("/")
     public String index() {
         return "index";
@@ -30,6 +36,12 @@ public class AccountController {
         //account type of the user
         model.addAttribute("accType", account.getAccType());
         model.addAttribute("currBal", account.getInitialAmt());
+
+        //saves the acc to our database using the repo
+        Account accInserted = accRepo.save(account);
+        //change this to id later instead of getDateOpened
+        model.addAttribute("message", accInserted.getDateOpened() + " inserted");
+
 
         return "welcome";
     }

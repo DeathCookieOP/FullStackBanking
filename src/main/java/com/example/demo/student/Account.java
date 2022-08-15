@@ -1,21 +1,28 @@
 package com.example.demo.student;
 
+import javax.persistence.*;
 import java.util.Date;
 
 //to map this student to our database
-//@Entity //for hibernate
-//@Table //for table in database
+@Entity //for hibernate
+@Table() //for table in database
 public class Account {
 
-//    these should be same name as name in html
+//    adding this to the database so it generates it for us
+    @Id
+    @GeneratedValue
+//    @Column(name = "ID")
     int id;
+
+//    these should be same name as name in html
+//    @Column(name = "Account Type")
     String accType;
+
     double initialAmt;
+//    @Column(name = "Date Created")
     Date dateOpened;
 
-//    removed id for now, database will generate it for us
     public Account(String accType, double initialAmt) {
-//        this.id = id;
         this.accType = accType;
         this.initialAmt = initialAmt; //conv to a double
         this.dateOpened = new Date();
@@ -56,7 +63,7 @@ public class Account {
     @Override
     public String toString() {
         return "Account{" +
-                "id=" + id +
+//                "id=" + id +
                 ", accType='" + accType + '\'' +
                 ", initialAmt=" + initialAmt +
                 ", dateOpened=" + dateOpened +
