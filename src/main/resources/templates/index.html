@@ -9,12 +9,15 @@
     <title>Index</title>
 </head>
 <body>
+
     <h1>Create a Banking Account!</h1>
     <!--action we will change to main page (guy in vid said /register for endpoint)-->
     <a href="h2">anchor</a>
     <form action="register" method="post" >
         <!-- get acc # from the java accounts int or sm -->
         <p>Account number: <span name="id"></span></p>
+        <p>Full name</p>
+        <input type="text" placeholder="First Last" name="fullName">
         <p>Checkings or savings account</p>
         <select name="accType" id="" required>
             <!-- make it so if they choose this one it doesnt allow them -->
@@ -23,11 +26,11 @@
             <option value="savingsAcc">Savings</option>
         </select>
         <p>Account initial amount </p>
-        <input type="text" placeholder="100.00" name="initialAmt" id="initialAmount">
-        <div id="ifSavings" style="display: none">
-            <p>Savings Account: Annual Interest (do not include % sign)</p>
-            <input type="text" placeholder="10%" name="annualInterest">
-        </div>
+        <input type="text" placeholder="100.00" name="balance" id="balance">
+<!--        <div id="ifSavings" style="display: none">-->
+<!--            <p>Savings Account: Annual Interest (do not include % sign)</p>-->
+<!--            <input type="text" placeholder="10%" name="annualInterest">-->
+<!--        </div>-->
         <button type="submit">Submit</button>
     </form>
 

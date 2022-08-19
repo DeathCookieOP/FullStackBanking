@@ -15,16 +15,16 @@ public class Account {
     int id;
 
 //    these should be same name as name in html
-//    @Column(name = "Account Type")
+//    @Column(name = "Account Type") (do this for all vars if you want)
     String accType;
+    String fullName;
 
-    double initialAmt;
-//    @Column(name = "Date Created")
+    double balance;
     Date dateOpened;
 
-    public Account(String accType, double initialAmt) {
+    public Account(String accType, double balance) {
         this.accType = accType;
-        this.initialAmt = initialAmt; //conv to a double
+        this.balance = balance; //conv to a double
         this.dateOpened = new Date();
     }
 
@@ -36,6 +36,15 @@ public class Account {
         this.id = id;
     }
 
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+
     public String getAccType() {
         return accType;
     }
@@ -45,11 +54,11 @@ public class Account {
     }
 
     public double getInitialAmt() {
-        return initialAmt;
+        return balance;
     }
 
-    public void setInitialAmt(double initialAmt) {
-        this.initialAmt = initialAmt;
+    public void setInitialAmt(double balance) {
+        this.balance = balance;
     }
 
     public Date getDateOpened() {
@@ -60,12 +69,20 @@ public class Account {
         this.dateOpened = dateOpened;
     }
 
+    public void withdraw(double amount) {
+        this.balance -= amount;
+    }
+
+    public void deposit(double amount) {
+        this.balance += amount;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
 //                "id=" + id +
                 ", accType='" + accType + '\'' +
-                ", initialAmt=" + initialAmt +
+                ", initialAmt=" + balance +
                 ", dateOpened=" + dateOpened +
                 '}';
     }
