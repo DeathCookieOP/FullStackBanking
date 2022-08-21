@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="/css/main_master.css">
 </head>
 <body>
 <nav>
@@ -19,10 +20,10 @@
 <br><br>
 <table class="tblOfAccs" border="1">
     <thead>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Acc Type</th>
-    <th>Balance</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Acc Type</th>
+        <th>Balance</th>
     </thead>
     <tbody>
     <!-- Each is like a for each loop for all accs -->
@@ -30,10 +31,12 @@
         <td th:text="${account.id}"></td>
         <td th:text="${account.fullName}"></td>
         <td th:text="${account.accType}"></td>
+<!--        this part is messed up (balance doesnt work but initial does
+            but initial is only giving me 0-->
         <td th:text="${account.initialAmt}"></td>
-        <!-- this will send us to the area to edit our acc -->
-        <td th:href="@{/edit/{id}({id=${account.id})}" class="account-button"></td>
-        <td th:href="@{/delete}{id}({id=${account.id})}" class="account-button"></td>
+<!--         this will send us to the area to edit our acc -->
+<!--        <td th:href="@{/edit/{id}({id=${account.id})}" class="account-button"></td>-->
+<!--        <td th:href="@{/delete}{id}({id=${account.id})}" class="account-button"></td>-->
     </tr>
     </tbody>
 </table>

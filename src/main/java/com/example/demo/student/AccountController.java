@@ -46,7 +46,7 @@ public class AccountController {
         //account type of the user
         model.addAttribute("fullName", account.getFullName());
         model.addAttribute("accType", account.getAccType());
-        model.addAttribute("currBal", account.getInitialAmt());
+        model.addAttribute("initialAmt", account.getInitialAmt());
 
         return "welcome";
     }
@@ -60,7 +60,7 @@ public class AccountController {
     }
 
     @RequestMapping(path = {"/remove/{id}"})
-    public String deleteAccountByID(Model model, @PathVariable("id") int id) {
+    public String deleteAccountByID(Model model, @PathVariable("id") int id) throws Exception {
         System.out.println("deleteAccountByID: " + id);
         /**
          * can use accRepo here

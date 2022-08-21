@@ -44,6 +44,7 @@ public class AccountService {
             newAccount.setFullName(account.getFullName());
             newAccount.setAccType(account.getAccType());
             newAccount.setDateOpened(account.getDateOpened());
+            newAccount.setInitialAmt(account.getInitialAmt());
 
             newAccount = accRepo.save(newAccount);
             return newAccount;
@@ -55,7 +56,12 @@ public class AccountService {
     }
 
 
-    public void deleteById(int id) {
+    public void deleteById(int id) throws Exception {
+        System.out.println("deleteByID");
+        Optional<Account> account = accRepo.findById(id);
+
+        if(account.isPresent()) accRepo.deleteById(id);
+        else throw new Exception("No account in our records");
     }
 
 

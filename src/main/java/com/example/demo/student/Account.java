@@ -19,12 +19,18 @@ public class Account {
     String accType;
     String fullName;
 
-    double balance;
+    double initialAmt;
     Date dateOpened;
 
-    public Account(String accType, double balance) {
+    public Account() {
+        this.accType = "checkingsAcc";
+        this.initialAmt = 10;
+        this.dateOpened = new Date();
+    }
+
+    public Account(String accType, double initialAmt) {
         this.accType = accType;
-        this.balance = balance; //conv to a double
+        this.initialAmt = initialAmt; //conv to a double
         this.dateOpened = new Date();
     }
 
@@ -54,11 +60,11 @@ public class Account {
     }
 
     public double getInitialAmt() {
-        return balance;
+        return initialAmt;
     }
 
-    public void setInitialAmt(double balance) {
-        this.balance = balance;
+    public void setInitialAmt(double initialAmt) {
+        this.initialAmt = initialAmt;
     }
 
     public Date getDateOpened() {
@@ -70,11 +76,11 @@ public class Account {
     }
 
     public void withdraw(double amount) {
-        this.balance -= amount;
+        this.initialAmt -= amount;
     }
 
     public void deposit(double amount) {
-        this.balance += amount;
+        this.initialAmt += amount;
     }
 
     @Override
@@ -82,7 +88,7 @@ public class Account {
         return "Account{" +
 //                "id=" + id +
                 ", accType='" + accType + '\'' +
-                ", initialAmt=" + balance +
+                ", initialAmt=" + initialAmt +
                 ", dateOpened=" + dateOpened +
                 '}';
     }
