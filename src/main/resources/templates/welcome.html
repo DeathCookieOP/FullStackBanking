@@ -2,16 +2,26 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/welcome_master.css">
     <title>Welcome</title>
 </head>
 <body>
 
-<h1>Welcome <span th:text="${fullName}"></span></h1>
+<nav>
+    <ul>
+        <li class="navLinks"><a href="home">Home</a></li>
+        <li class="navLinks"><a href="register">Register</a></li>
+        <li class="navLinks"> <a href="h2">Console</a></li>
+    </ul>
+</nav>
+<br><br><br>
 
+<h1>Welcome <span th:text="${fullName}"></span></h1>
 <h2 th:text="${message}"></h2>
 
 <h2>Account Type:</h2>
 <h3 th:text="${accType}"></h3>
+
 <h2>Current Balance: </h2>
 <h3 th:text="${initialAmt}"></h3>
 

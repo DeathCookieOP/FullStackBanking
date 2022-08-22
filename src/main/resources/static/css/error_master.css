@@ -3,18 +3,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: black;
-    font-weight: 400;
 }
 
 body{
     background-color: gainsboro;
 }
 
+
 /* Navigation Styling */
 nav{
     padding: 10px;
-    background-color: rgba(118, 191, 255, .5);
+    background-color: rgba(0, 4, 129, 0.5);
     text-align: center;
     position: absolute;
     width: 100%;
@@ -28,20 +27,20 @@ nav li{
 }
 
 nav a:link, nav a:visited{
-    color: rgb(159, 0, 0);
+    color: rgb(213, 197, 50);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
 }
 
 nav a:hover{
-    color: rgb(95, 0, 0);
+    color: rgb(255, 247, 189);
 }
 
-
-
-table{
-    border: 2px black solid;
+main{
+    text-align: center;
 }
 
-
+h4{
+    font-weight: normal;
+}
